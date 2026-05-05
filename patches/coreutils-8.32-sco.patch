@@ -1,0 +1,45 @@
+diff -ruN a/lib/unistd.in.h b/lib/unistd.in.h
+--- a/lib/unistd.in.h
++++ b/lib/unistd.in.h
+@@ -809,7 +809,7 @@
+                                     _GL_ARG_NONNULL ((1)));
+ _GL_CXXALIAS_RPL (gethostname, int, (char *name, size_t len));
+ # else
+-#  if !@HAVE_GETHOSTNAME@
++#  if 0  /* SCO patch: skip gnulib gethostname redecl */
+ _GL_FUNCDECL_SYS (gethostname, int, (char *name, size_t len)
+                                     _GL_ARG_NONNULL ((1)));
+ #  endif
+diff -ruN a/lib/getprogname.c b/lib/getprogname.c
+--- a/lib/getprogname.c
++++ b/lib/getprogname.c
+@@ -246,7 +246,7 @@
+     }
+   return NULL;
+ # else
+-#  error "getprogname module not ported to this OS"
++  return "?";
+ # endif
+ }
+ 
+diff -ruN a/lib/gethostname.c b/lib/gethostname.c
+--- a/lib/gethostname.c
++++ b/lib/gethostname.c
+@@ -39,7 +39,7 @@
+ #include <stddef.h>
+ 
+ int
+-gethostname (char *name, size_t len)
++gethostname (char *name, int len)
+ {
+ #ifdef HAVE_UNAME
+   struct utsname uts;
+@@ -87,7 +87,7 @@
+ #undef gethostname
+ 
+ int
+-rpl_gethostname (char *name, size_t len)
++rpl_gethostname (char *name, int len)
+ {
+   int r;
+ 
