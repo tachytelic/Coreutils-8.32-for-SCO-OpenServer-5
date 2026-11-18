@@ -187,5 +187,5 @@ license — see [LICENSE](LICENSE).
   [GNU tar 1.34 for SCO](https://github.com/tachytelic/Tar-1.34-for-SCO-OpenServer-5),
   [GNU nano 2.9.8 for SCO](https://github.com/tachytelic/Nano-2.9.8-for-SCO-OpenServer-5)
   — sibling builds.
-- [More SCO OpenServer 5 binaries](https://tachytelic.net/2017/07/sco-openserver-5-binaries/)
+- [More SCO OpenServer 5 binaries](https://scoexpert.com/guides/sco-openserver-5-binaries/)
   — the hub.
